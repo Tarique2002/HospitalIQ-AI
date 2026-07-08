@@ -1,0 +1,13 @@
+CREATE TABLE doctors (
+    doctor_id SERIAL PRIMARY KEY,
+    doctor_name VARCHAR(150) NOT NULL,
+    specialization VARCHAR(100),
+    department_id INT NOT NULL,
+    experience_years INT CHECK (experience_years >= 0),
+    shift VARCHAR(20),
+    status VARCHAR(20) DEFAULT 'Active',
+
+    CONSTRAINT fk_department
+        FOREIGN KEY (department_id)
+        REFERENCES departments(department_id)
+);

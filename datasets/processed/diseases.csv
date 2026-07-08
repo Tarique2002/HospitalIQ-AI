@@ -1,0 +1,21 @@
+disease_id,disease_name,severity,average_stay_days
+1,Heart Attack,Critical,10
+2,Hypertension,Medium,3
+3,Stroke,Critical,12
+4,Migraine,Low,2
+5,Diabetes,Medium,4
+6,Asthma,Medium,3
+7,Pneumonia,High,8
+8,COVID-19,High,9
+9,Cancer,Critical,20
+10,Kidney Stone,Medium,5
+11,Dengue,High,7
+12,Typhoid,Medium,6
+13,Malaria,Medium,5
+14,Fracture,Medium,10
+15,Burn Injury,Critical,15
+16,Appendicitis,High,4
+17,Tuberculosis,High,18
+18,Arthritis,Low,3
+19,Depression,Medium,6
+20,Epilepsy,High,8

@@ -1,0 +1,10 @@
+CREATE TABLE diseases (
+    disease_id SERIAL PRIMARY KEY,
+    disease_name VARCHAR(150) NOT NULL UNIQUE,
+    severity VARCHAR(20),
+    department_id INT NOT NULL,
+
+    CONSTRAINT fk_disease_department
+        FOREIGN KEY (department_id)
+        REFERENCES departments(department_id)
+);

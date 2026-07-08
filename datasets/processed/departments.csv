@@ -1,0 +1,13 @@
+department_id,department_name,floor,total_beds
+1,Cardiology,1,60
+2,Neurology,2,45
+3,Orthopedics,3,70
+4,Emergency,0,80
+5,Pediatrics,4,50
+6,Oncology,5,40
+7,ICU,1,30
+8,ENT,2,35
+9,Dermatology,3,25
+10,Gynecology,4,55
+11,Urology,5,30
+12,Psychiatry,6,20
