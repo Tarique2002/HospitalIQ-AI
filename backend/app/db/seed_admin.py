@@ -9,7 +9,7 @@ def seed_admin():
 
     admin = (
         db.query(User)
-        .filter(User.email == "admin@hospitaliq.ai")
+        .filter(User.email == "admin@hospitaliq.com")
         .first()
     )
 
@@ -20,8 +20,8 @@ def seed_admin():
 
     admin = User(
         name="Super Admin",
-        email="admin@hospitaliq.ai",
-        password_hash=hash_password("admin123"),
+        email="admin@hospitaliq.com",
+        password_hash=hash_password("hospitaliq2026"),
         role="Super Admin",
         is_active=True,
     )
