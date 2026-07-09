@@ -26,4 +26,4 @@ def load_beds():
     db.commit()
     db.close()
 
-    print("✅ Beds loaded")
+    print("Beds loaded")

@@ -31,4 +31,4 @@ def load_admissions():
     db.commit()
     db.close()
 
-    print("✅ Admissions loaded")
+    print("Admissions loaded")

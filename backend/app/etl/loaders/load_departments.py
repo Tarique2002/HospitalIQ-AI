@@ -26,4 +26,4 @@ def load_departments():
     db.commit()
     db.close()
 
-    print("✅ Departments loaded")
+    print("Departments loaded")

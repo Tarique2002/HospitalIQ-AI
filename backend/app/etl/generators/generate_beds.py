@@ -4,28 +4,33 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parents[4]
 OUTPUT = BASE_DIR / "datasets" / "processed" / "beds.csv"
-OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
-rows=[]
+def generate_beds():
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
-for bed in range(1,501):
+    rows=[]
 
-    rows.append({
+    for bed in range(1,501):
 
-        "bed_id":bed,
-        "department_id":random.randint(1,12),
-        "bed_type":random.choice([
-            "General",
-            "ICU",
-            "Ventilator"
-        ]),
-        "status":random.choice([
-            "Available",
-            "Occupied",
-            "Maintenance"
-        ])
-    })
+        rows.append({
 
-pd.DataFrame(rows).to_csv(OUTPUT,index=False)
+            "bed_id":bed,
+            "department_id":random.randint(1,12),
+            "bed_type":random.choice([
+                "General",
+                "ICU",
+                "Ventilator"
+            ]),
+            "status":random.choice([
+                "Available",
+                "Occupied",
+                "Maintenance"
+            ])
+        })
 
-print("✅ beds.csv generated")
+    pd.DataFrame(rows).to_csv(OUTPUT,index=False)
+
+    print("beds.csv generated")
+
+if __name__ == "__main__":
+    generate_beds()

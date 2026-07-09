@@ -28,4 +28,4 @@ def load_patients():
     db.commit()
     db.close()
 
-    print("✅ Patients loaded")
+    print("Patients loaded")

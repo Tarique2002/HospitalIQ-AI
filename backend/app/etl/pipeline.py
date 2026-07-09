@@ -10,7 +10,7 @@ from app.etl.loaders.load_all import load_all
 
 def main():
     print("=" * 50)
-    print("🏥 HospitalIQ AI ETL Pipeline")
+    print("HospitalIQ AI ETL Pipeline")
     print("=" * 50)
 
     generate_departments()
@@ -22,7 +22,7 @@ def main():
 
     load_all()
 
-    print("\n🎉 Pipeline completed successfully!")
+    print("\nPipeline completed successfully!")
 
 
 if __name__ == "__main__":

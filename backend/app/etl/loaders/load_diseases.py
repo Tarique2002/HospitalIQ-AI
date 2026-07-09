@@ -26,4 +26,4 @@ def load_diseases():
     db.commit()
     db.close()
 
-    print("✅ Diseases loaded")
+    print("Diseases loaded")

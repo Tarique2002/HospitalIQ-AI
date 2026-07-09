@@ -27,4 +27,4 @@ def load_doctors():
     db.commit()
     db.close()
 
-    print("✅ Doctors loaded")
+    print("Doctors loaded")

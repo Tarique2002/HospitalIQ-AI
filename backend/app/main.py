@@ -48,6 +48,21 @@ try:
 except Exception as e:
     print(f"Error seeding admin user: {e}")
 
+try:
+    from app.db.database import SessionLocal
+    from app.models.department import Department
+    from app.etl.loaders.load_all import load_all
+
+    db = SessionLocal()
+    if db.query(Department).count() == 0:
+        print("Database is empty. Running ETL pipeline to seed initial data...")
+        load_all()
+    else:
+        print("Database already contains data, skipping ETL seeding.")
+    db.close()
+except Exception as e:
+    print(f"Error seeding data on startup: {e}")
+
 app.include_router(department_router)
 app.include_router(patient_router)
 app.include_router(bed_router)

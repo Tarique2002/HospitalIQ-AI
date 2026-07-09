@@ -7,25 +7,30 @@ fake = Faker("en_IN")
 
 BASE_DIR = Path(__file__).resolve().parents[4]
 OUTPUT = BASE_DIR / "datasets" / "processed" / "doctors.csv"
-OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
-rows=[]
+def generate_doctors():
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
-for doctor_id in range(1,151):
+    rows=[]
 
-    rows.append({
+    for doctor_id in range(1,151):
 
-        "doctor_id":doctor_id,
-        "name":fake.name(),
-        "department_id":random.randint(1,12),
-        "experience":random.randint(2,30),
-        "shift":random.choice([
-            "Morning",
-            "Evening",
-            "Night"
-        ])
-    })
+        rows.append({
 
-pd.DataFrame(rows).to_csv(OUTPUT,index=False)
+            "doctor_id":doctor_id,
+            "name":fake.name(),
+            "department_id":random.randint(1,12),
+            "experience":random.randint(2,30),
+            "shift":random.choice([
+                "Morning",
+                "Evening",
+                "Night"
+            ])
+        })
 
-print("✅ doctors.csv generated")
+    pd.DataFrame(rows).to_csv(OUTPUT,index=False)
+
+    print("doctors.csv generated")
+
+if __name__ == "__main__":
+    generate_doctors()
