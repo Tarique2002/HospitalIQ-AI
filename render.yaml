@@ -13,7 +13,7 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: ALLOWED_ORIGINS
-        value: "https://your-vercel-domain.vercel.app"
+        value: "https://hospital-iq-ai.vercel.app"
       - key: PYTHON_VERSION
         value: "3.12.10"
 
