@@ -60,8 +60,33 @@ app.include_router(sql_router)
 app.include_router(auth_router)
 
 @app.get("/")
-def root():
+def read_root():
     return {
-        "status": "success",
-        "message": "HospitalIQ AI API running 🚑"
+        "message": "Welcome to HospitalIQ AI API",
+        "status": "healthy",
+        "version": "1.0.0"
     }
+
+@app.get("/test-db")
+def test_db():
+    from app.db.database import SessionLocal
+    from app.models.user import User
+    from app.core.config import DATABASE_URL
+    try:
+        db = SessionLocal()
+        users = db.query(User).all()
+        user_list = [{"email": u.email, "role": u.role, "is_active": u.is_active} for u in users]
+        db.close()
+        return {
+            "status": "success",
+            "users_count": len(user_list),
+            "users": user_list,
+            "database_url_configured": DATABASE_URL.startswith("postgresql")
+        }
+    except Exception as e:
+        import traceback
+        return {
+            "status": "error",
+            "message": str(e),
+            "traceback": traceback.format_exc()
+        }
