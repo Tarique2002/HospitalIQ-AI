@@ -10,6 +10,7 @@ from app.models.bed import Bed
 from app.models.patient import Patient
 from app.models.admission import Admission
 from app.models.user import User
+from app.db.seed_admin import seed_admin
 
 from app.api.department import router as department_router
 from app.api.patient import router as patient_router
@@ -41,6 +42,11 @@ app.add_middleware(
 )
 
 Base.metadata.create_all(bind=engine)
+
+try:
+    seed_admin()
+except Exception as e:
+    print(f"Error seeding admin user: {e}")
 
 app.include_router(department_router)
 app.include_router(patient_router)
