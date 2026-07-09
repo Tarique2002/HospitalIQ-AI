@@ -1,4 +1,4 @@
-﻿alembic==1.18.5
+alembic==1.18.5
 annotated-doc==0.0.4
 annotated-types==0.7.0
 anyio==4.14.1
@@ -90,7 +90,7 @@ psutil==7.2.2
 psycopg2-binary==2.9.12
 pure_eval==0.2.3
 pycparser==3.0
-pydantic==2.13.4
+pydantic[email]==2.13.4
 pydantic_core==2.46.4
 Pygments==2.20.0
 pyparsing==3.3.2
@@ -132,3 +132,4 @@ webcolors==25.10.0
 webencodings==0.5.1
 websocket-client==1.9.0
 widgetsnbextension==4.0.15
+email-validator==2.1.0
